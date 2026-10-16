@@ -1,0 +1,6 @@
+{
+  "name": "BASAH SERVICE LIMITED - Vehicle Income & Expense System",
+  "description": "Professional fleet vehicle income, fuel, and expense management system for Basah Service Limited.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

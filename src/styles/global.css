@@ -1,0 +1,252 @@
+/* BASAH SERVICE LIMITED - Design System & Custom Dashboard Styles */
+
+:root {
+  --bs-primary: #28634d;
+  --bs-primary-rgb: 40, 99, 77;
+  --bs-body-font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --bs-font-monospace: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  --brand-ink: #26312d;
+  --brand-muted: #66716b;
+  --brand-border: #dfe5e0;
+  --brand-canvas: #f5f7f4;
+
+  --sidebar-width: 248px;
+  --topbar-height: 64px;
+}
+
+body {
+  font-family: var(--bs-body-font-family);
+  color: var(--brand-ink);
+  background-color: var(--brand-canvas);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tabular Numbers Discipline */
+.tabular-nums, .font-mono, td.num-col, .stat-value {
+  font-family: var(--bs-font-monospace);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
+
+/* Sidebar Styling */
+.app-sidebar {
+  width: var(--sidebar-width);
+  background: #26312d;
+  color: #eef2ef;
+  transition: transform 0.2s ease;
+  z-index: 1040;
+}
+
+.app-sidebar .nav-link {
+  color: #c2cbc5;
+  border-radius: 6px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.app-sidebar .nav-link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.app-sidebar .nav-link.active {
+  color: #ffffff;
+  background-color: #3e7059;
+}
+
+/* Top Navbar */
+.app-navbar {
+  height: var(--topbar-height);
+  background: #ffffff;
+  border-bottom: 1px solid var(--brand-border);
+  z-index: 1030;
+}
+
+.card-modern {
+  background: #ffffff;
+  border: 1px solid var(--brand-border);
+  border-radius: 8px;
+}
+
+.main-shell {
+  margin-left: var(--sidebar-width);
+  min-width: 0;
+  transition: margin-left 0.2s ease;
+}
+
+.main-content {
+  background-color: var(--brand-canvas);
+}
+
+.form-control,
+.form-select {
+  border-color: var(--brand-border);
+  border-radius: 6px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #79a58f;
+  box-shadow: 0 0 0 0.2rem rgba(40, 99, 77, 0.12);
+}
+
+.btn-primary {
+  --bs-btn-bg: #28634d;
+  --bs-btn-border-color: #28634d;
+  --bs-btn-hover-bg: #214f3e;
+  --bs-btn-hover-border-color: #214f3e;
+  --bs-btn-active-bg: #1d4938;
+  --bs-btn-active-border-color: #1d4938;
+}
+
+.chart-frame {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  height: 280px;
+}
+
+.chart-frame-short {
+  height: 220px;
+}
+
+/* Custom Table Styles */
+.table-modern {
+  --bs-table-bg: transparent;
+  margin-bottom: 0;
+}
+
+.table-modern thead th {
+  background-color: #f5f7f4;
+  color: var(--brand-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--brand-border);
+  white-space: nowrap;
+}
+
+.table-modern tbody td {
+  padding: 0.85rem 1rem;
+  vertical-align: middle;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #edf0ed;
+}
+
+.table-modern tbody tr:hover {
+  background-color: #f7f9f7;
+}
+
+/* Numeric column alignment */
+.num-col {
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Custom Modal Backdrop */
+.modal-backdrop-custom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(2px);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Custom Toast Container */
+.toast-container-custom {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 400px;
+}
+
+/* Vehicle Badge */
+.vehicle-plate-badge {
+  font-family: var(--bs-font-monospace);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background-color: #f4f0df;
+  color: #6c5b28;
+  border: 1px solid #e8dfc3;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  display: inline-block;
+}
+
+@media (max-width: 991.98px) {
+  .main-shell {
+    margin-left: 0;
+  }
+}
+
+/* Print Styles for Executive Monthly Reports */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    font-size: 11pt;
+  }
+
+  .no-print,
+  .app-sidebar,
+  .app-navbar,
+  .btn,
+  .toast-container-custom,
+  .filter-bar {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .card-modern {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .table-modern {
+    border: 1px solid #000000 !important;
+  }
+
+  .table-modern thead th {
+    background-color: #e2e8f0 !important;
+    color: #000000 !important;
+    border-bottom: 2px solid #000000 !important;
+  }
+
+  .table-modern td, .table-modern th {
+    padding: 4px 8px !important;
+    font-size: 9pt !important;
+  }
+}
